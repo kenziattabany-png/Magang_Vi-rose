@@ -1,0 +1,43 @@
+#include <vector>
+#include <iostream>
+using namespace std;
+
+
+int main() {
+    int x,y;
+    int a,b,c;
+
+    cin>>a>>b>>c;
+
+    vector<int> menit;
+
+    for(int i = 1; i <=3; i++){
+        cin>>x>>y;
+        for(int j = x; j<y; j++){
+            menit.push_back(j);
+        }
+    }
+
+    int biaya;
+    for(int m = 1; m <= 100; m++){ 
+        int jumlah = 0;
+        for(int i = 0; i < menit.size(); i++){
+            if(menit[i] == m){
+                jumlah++;
+            }
+        }
+
+        if(jumlah == 1){
+            biaya += 1 * a;
+        } 
+        else if(jumlah == 2){
+            biaya += 2 * b;
+        } 
+        else if(jumlah == 3){
+            biaya += 3 * c;
+        }
+    }
+
+    cout<<biaya;
+    return 0;
+}
